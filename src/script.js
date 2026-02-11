@@ -8,6 +8,9 @@ const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
+const introScreen = document.getElementById("intro-screen");
+const introNext = document.getElementById("intro-next");
+const middleImage = document.getElementById("letter-middle-image");
 
 // Click Envelope
 
@@ -15,9 +18,16 @@ envelope.addEventListener("click", () => {
     envelope.style.display = "none";
     letter.style.display = "flex";
 
-    setTimeout( () => {
+    // show intro and hide the main question until user clicks Continue
+    if (introScreen) introScreen.style.display = "block";
+    title.style.display = "none";
+    catImg.style.display = "none";
+    buttons.style.display = "none";
+    if (middleImage) middleImage.style.display = "block";
+
+    setTimeout(() => {
         document.querySelector(".letter-window").classList.add("open");
-    },50);
+    }, 50);
 });
 
 // Logic to move the NO btn
@@ -60,9 +70,9 @@ noBtn.addEventListener("mouseover", () => {
 // YES is clicked
 
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+    title.textContent = "Yeiiiiiiiii! Sabía que aceptarías";
 
-    catImg.src = "cat_dance.gif";
+    catImg.src = "../media/cat_dance.gif";
 
     document.querySelector(".letter-window").classList.add("final");
 
@@ -70,3 +80,15 @@ yesBtn.addEventListener("click", () => {
 
     finalText.style.display = "block";
 });
+
+// Advance from intro to main question
+if (introNext) {
+    introNext.addEventListener("click", () => {
+        if (introScreen) introScreen.style.display = "none";
+        title.style.display = "block";
+        catImg.style.display = "block";
+        buttons.style.display = "flex";
+        document.querySelector(".letter-window").classList.add("open");
+        if (middleImage) middleImage.style.display = "none";
+    });
+}

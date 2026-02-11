@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("heart-bg.jpg");
+    background-image: url("../media/heart-bg.jpg");
     font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -50,7 +50,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
+    background-image: url("../media/window.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -75,6 +75,44 @@ h1 {
 
 p {
     font-size: 40px;
+}
+
+.letter-intro {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #4a2a2a;
+    max-width: 80%;
+    margin: 0 auto 12px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#intro-screen {
+    display: block;
+    width: 100%;
+}
+
+.primary-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #ff6b81;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.primary-btn:active {
+    transform: translateY(1px);
+}
+
+.middle-image {
+    width: 220px;
+    max-width: 60%;
+    display: block;
+    margin: 12px auto;
 }
 
 /* Cat */
