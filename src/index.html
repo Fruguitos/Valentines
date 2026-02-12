@@ -50,6 +50,11 @@
         </p>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../app.js"></script>
+    <script>
+      if (window.ValentineApp && typeof window.ValentineApp.initAll === 'function') {
+        window.ValentineApp.initAll();
+      }
+    </script>
   </body>
 </html>
